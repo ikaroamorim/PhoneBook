@@ -1,3 +1,12 @@
+
+:root{
+    --highlight: #e63946;
+    --bg: #f1faee;
+    --soft: #a8dadc;
+    --regular:#457b9d;
+    --dark: #1d3557;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -9,15 +18,15 @@ html, body{
 }
 
 body{
-    background-color: #f1faee;
+    background-color: var(--bg);
 }
 
 header{
     height: 20vh;
-    background-color: #1d3557;
+    background-color: var(--dark);
 }
 
 footer{
     height: 10vh;
-    background-color: #1d3557;
+    background-color: var(--dark);
 }
