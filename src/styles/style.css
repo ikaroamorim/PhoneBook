@@ -28,18 +28,34 @@ header{
     border-bottom: 7px solid var(--highlight);
 }
 
+header .container img{
+    height: 10vh;
+    vertical-align: middle;
+}
+
+header .container span{
+    color: var(--soft);
+    font-size: 48px;
+    vertical-align: middle;
+}
+
+.main{
+    min-height: 80vh;
+}
+
 
 footer{
     /*position: absolute;*/
     width: 100%;
     /*bottom: 0;*/
-    height: 5vh;
+    height: 8vh;
     background-color: var(--dark);
     color: var(--light);
     text-align: center;
 }
 
-.footer-replacer{
-    /* Replace with footer height, to avoid the footer overiding the content*/
-    height: 5vh;
+footer{
+    padding: 1% 0;
 }
+
+
