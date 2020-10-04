@@ -22,11 +22,24 @@ body{
 }
 
 header{
-    height: 20vh;
+    height: 12vh;
+    margin: 0 0 20px 0;
     background-color: var(--dark);
+    border-bottom: 7px solid var(--highlight);
 }
 
+
 footer{
-    height: 10vh;
+    /*position: absolute;*/
+    width: 100%;
+    /*bottom: 0;*/
+    height: 5vh;
     background-color: var(--dark);
+    color: var(--light);
+    text-align: center;
+}
+
+.footer-replacer{
+    /* Replace with footer height, to avoid the footer overiding the content*/
+    height: 5vh;
 }
