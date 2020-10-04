@@ -28,3 +28,43 @@ const dataPost = (data) =>{
     })
 }
 
+/* Delete a Entrie*/
+const dataDelete = (id) =>{
+    return fetch(`http://localhost:3000/phones/${id}`,{
+        method: 'DELETE',
+        headers: {
+            'Content-type': 'application/json'
+        }
+    })
+    .then(response => {
+        return response.body
+    })
+}
+
+/* Seleciona um usuário */
+const dataGet = (id) => {
+    return fetch(`http://localhost:3000/phones/${id}`)
+    .then( response =>{
+        return response.json()
+    })
+    .then( json =>{
+        return json
+    })
+}
+
+/* Atualiza um usuário*/
+const dataEdit = (id, data) =>{
+    const Json = JSON.stringify(data)
+
+    return fetch(`http://localhost:3000/phones/${id}`,{
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: Json
+    })
+    .then(response => {
+        return response.body
+    })
+
+}

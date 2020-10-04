@@ -11,8 +11,8 @@ const usersTable = (tableData)=> {
             <td>${item.email}</td>
             <td>${item.phone}</td>
             <td>
-            <button onclick="edit(${item.id})" type="button" class="btn btn-primary"><i class="fas fa-user-edit"></i></button>
-            <button onclick="del(${item.id})" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+            <button onclick="renderEditForm(${item.id})" type="button" class="btn btn-primary"><i class="fas fa-user-edit"></i></button>
+            <button onclick="userDel(${item.id})" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
             <button onclick="mailto(${item.id})" type="button" class="btn btn-secondary"><i class="fas fa-paper-plane"></i></button>
             <td>
         </tr>

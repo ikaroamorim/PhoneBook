@@ -28,17 +28,9 @@
       "name": "Ikaro",
       "lastName": "Silva",
       "company": "Contoso",
-      "phone": "12123451234",
+      "phone": 12123451234445,
       "email": "ikaro.amorim@gmail.com",
       "id": 4
-    },
-    {
-      "name": "teste",
-      "lastName": "teste",
-      "company": "teste",
-      "phone": 123,
-      "email": "teste@teste.com",
-      "id": 5
     }
   ]
 }
