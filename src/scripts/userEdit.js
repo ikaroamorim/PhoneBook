@@ -57,6 +57,6 @@ const renderEditForm = (id) =>{
         viewContent(usersEdit(response))
         eventsEditForm(id)
     })
-    
-    
 }
+
+export {renderEditForm}

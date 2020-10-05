@@ -1,7 +1,7 @@
 /*
     To start Json server json-server --watch db.json
 */
-
+import {renderTable} from './usersTable.js'
 renderTable()
 
 

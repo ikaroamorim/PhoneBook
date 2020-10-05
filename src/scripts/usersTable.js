@@ -1,3 +1,6 @@
+import {dataFetch} from './api.js'
+import {renderEditForm} from './userEdit.js'
+
 /* Function Show Table displays a table, according our data model object array */
 const usersTable = (tableData)=> {
     let tablelines = ''
@@ -99,3 +102,5 @@ const renderTable = () =>{
         console.error(error + ' \n Using Example data')
 })
 }
+
+export {renderTable}
