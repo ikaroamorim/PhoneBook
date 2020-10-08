@@ -1,3 +1,6 @@
+import {renderTable} from './usersTable.js'
+import {dataPost} from './api.js'
+import {viewContent} from './view-content.js'
 
 const usersAdd = () =>{
     const contentmain = `
@@ -56,3 +59,5 @@ const renderForm = () =>{
     viewContent(usersAdd())
     eventsAddForm()
 }
+
+export {renderForm}

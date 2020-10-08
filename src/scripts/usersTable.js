@@ -1,12 +1,13 @@
-import {dataFetch} from './api.js'
-import {renderEditForm} from './userEdit.js'
-import {viewContent} from './view-content.js'
+import { dataFetch } from './api.js'
+import { renderForm } from './usersAdd.js'
+import { renderEditForm } from './userEdit.js'
+import { viewContent } from './view-content.js'
 
 /* Function Show Table displays a table, according our data model object array */
-const usersTable = (tableData)=> {
+const usersTable = (tableData) => {
     let tablelines = ''
 
-    tableData.forEach( item => {
+    tableData.forEach(item => {
         tablelines += `
         <tr>
             <th scope="row">${item.name}</th>
@@ -34,7 +35,7 @@ const usersTable = (tableData)=> {
                 <th scope="col">E-mail</th>
                 <th scope="col">Número</th>
                 <th scope="col">Ações</th>
-                <th scope="col"><button type="button" class="btn btn-success" onclick="renderForm()"><i class="fas fa-plus"></i></button></th>
+                <th scope="col"><button type="button" class="btn btn-success" id="addItem"><i class="fas fa-plus"></i></button></th>
             </thead>
             <tbody>
                 ${tablelines}
@@ -43,8 +44,16 @@ const usersTable = (tableData)=> {
     `
     return tablecontent;
 }
+const addBtnEventListener = () => {
+    const btn = document.getElementById('addItem')
+    btn.addEventListener('click', () => {
+        renderForm();
+    })
 
-const renderTable = () =>{
+
+}
+
+const renderTable = () => {
     const tableData = [{
         "id": 1,
         "name": "Ikaro",
@@ -95,13 +104,14 @@ const renderTable = () =>{
     }]
 
     /* Render the table, in case of errors render example content */
-    dataFetch().then( result =>{ 
+    dataFetch().then(result => {
         viewContent(usersTable(result))
+        addBtnEventListener()
     })
-    .catch( error =>{
-        viewContent(usersTable(tableData))
-        console.error(error + ' \n Using Example data')
-})
+        .catch(error => {
+            viewContent(usersTable(tableData))
+            console.error(error + ' \n Using Example data')
+        })
 }
 
-export {renderTable}
+export { renderTable }
