@@ -9,11 +9,32 @@ module.exports = {
     },
     entry: "./src/scripts/main.js",
     output: {
-        filename: "main.js",
+        filename: "bundle.js",
         path: path.resolve(__dirname, "dist")
     },
     plugins: [new HtmlWebpackPlugin({
         template: "./src/index.html",
         filename: "index.html"
-    })]
+    })],
+    module: {
+        rules:[
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"]
+            },
+            {
+                test: /\.html$/,
+                use:["html-loader"]
+            },
+            {
+                test: /\.svg$/,
+                use:{
+                    loader: "file-loader",
+                    options:{
+                        name: "[name].[ext]"
+                    }
+                }
+            }
+        ]
+    }
 }

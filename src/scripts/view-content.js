@@ -7,3 +7,5 @@ const container = document.querySelector("[data-main]")
 const viewContent = (content) =>{
     container.innerHTML = content
 }
+
+export {viewContent}

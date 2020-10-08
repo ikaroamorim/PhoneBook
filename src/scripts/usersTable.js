@@ -1,5 +1,6 @@
 import {dataFetch} from './api.js'
 import {renderEditForm} from './userEdit.js'
+import {viewContent} from './view-content.js'
 
 /* Function Show Table displays a table, according our data model object array */
 const usersTable = (tableData)=> {
