@@ -28,8 +28,13 @@ header{
     border-bottom: 7px solid var(--highlight);
 }
 
+header .container a{
+    text-decoration: none;
+}
+
 header .container img{
-    height: 10vh;
+    height: 12vh;
+    padding: 2vh 0;
     vertical-align: middle;
 }
 

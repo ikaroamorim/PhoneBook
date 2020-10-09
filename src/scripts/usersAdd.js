@@ -1,3 +1,6 @@
+import {dataPost} from './api.js'
+import {viewContent} from './view-content.js'
+import {navigation} from './router.js'
 
 const usersAdd = () =>{
     const contentmain = `
@@ -29,13 +32,12 @@ const usersAdd = () =>{
 }
 
 const eventsAddForm = () =>{
-    const form = document.querySelector('[data-form]')
     const btncancel = document.getElementById('addformcancel')
     const btnsend = document.getElementById('addformsend')
 
     btncancel.addEventListener("click", event =>{
         event.preventDefault()
-        renderTable()
+        navigation('/')
     })
 
     btnsend.addEventListener("click", event =>{
@@ -48,7 +50,7 @@ const eventsAddForm = () =>{
             "email": document.getElementById('addmail').value
         }
         dataPost(datasend)
-        renderTable()
+        navigation('/')
     })
 }
 
@@ -56,3 +58,5 @@ const renderForm = () =>{
     viewContent(usersAdd())
     eventsAddForm()
 }
+
+export {renderForm}

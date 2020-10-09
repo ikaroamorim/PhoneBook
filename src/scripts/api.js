@@ -68,3 +68,11 @@ const dataEdit = (id, data) =>{
     })
 
 }
+
+export {
+    dataFetch, 
+    dataPost,
+    dataDelete,
+    dataGet,
+    dataEdit
+}
