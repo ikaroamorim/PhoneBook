@@ -1,12 +1,12 @@
 {
   "phones": [
     {
-      "id": 1,
       "name": "Ikaro",
       "lastName": "Silva",
       "company": "Contoso",
-      "phone": "12123451234",
-      "email": "ikaro.amorim@gmail.com"
+      "phone": 121234512349,
+      "email": "ikaro.amorim@gmail.com",
+      "id": 1
     },
     {
       "id": 2,
@@ -31,14 +31,6 @@
       "phone": 12123451234445,
       "email": "ikaro.amorim@gmail.com",
       "id": 4
-    },
-    {
-      "name": "",
-      "lastName": "",
-      "company": "",
-      "phone": null,
-      "email": "",
-      "id": 5
     }
   ]
 }

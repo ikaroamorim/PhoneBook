@@ -1,3 +1,7 @@
+import {renderTable} from './usersTable.js'
+import {dataEdit, dataGet, datasend} from './api.js'
+import {viewContent} from './view-content.js'
+import { navigation } from './router.js'
 
 const usersEdit = (data) =>{
     const contentmain = `
@@ -34,7 +38,7 @@ const eventsEditForm = (id) =>{
 
     edtbtncancel.addEventListener("click", event =>{
         event.preventDefault()
-        renderTable()
+        navigation('/')
     })
 
     edtbtnsend.addEventListener("click", event =>{
@@ -47,11 +51,14 @@ const eventsEditForm = (id) =>{
             "email": document.getElementById('editmail').value
         }
         dataEdit(id,datasend)
-        renderTable()
+        navigation('/')
     })
 }
 
-const renderEditForm = (id) =>{
+const renderEditForm = () =>{
+    const url = new URL(window.location)
+    const id = url.searchParams.get('id')
+
     dataGet(id)
     .then(response =>{
         viewContent(usersEdit(response))

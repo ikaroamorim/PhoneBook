@@ -1,6 +1,4 @@
 import { dataFetch } from './api.js'
-import { renderForm } from './usersAdd.js'
-import { renderEditForm } from './userEdit.js'
 import { viewContent } from './view-content.js'
 
 /* Function Show Table displays a table, according our data model object array */
@@ -16,8 +14,8 @@ const usersTable = (tableData) => {
             <td>${item.email}</td>
             <td>${item.phone}</td>
             <td>
-            <button onclick="renderEditForm(${item.id})" type="button" class="btn btn-primary"><i class="fas fa-user-edit"></i></button>
-            <button onclick="userDel(${item.id})" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+            <button onclick="navigation('/edita?id=${item.id}')" type="button" class="btn btn-primary"><i class="fas fa-user-edit"></i></button>
+            <button onclick="navigation('/deleta?id=${item.id}')" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
             <button onclick="mailto(${item.id})" type="button" class="btn btn-secondary"><i class="fas fa-paper-plane"></i></button>
             <td>
         </tr>
@@ -35,7 +33,7 @@ const usersTable = (tableData) => {
                 <th scope="col">E-mail</th>
                 <th scope="col">Número</th>
                 <th scope="col">Ações</th>
-                <th scope="col"><button type="button" class="btn btn-success" id="addItem"><i class="fas fa-plus"></i></button></th>
+                <th scope="col"><button type="button" class="btn btn-success" id="addItem" onclick="navigation('/cadastra'); return false;"><i class="fas fa-plus"></i></button></th>
             </thead>
             <tbody>
                 ${tablelines}
@@ -44,16 +42,18 @@ const usersTable = (tableData) => {
     `
     return tablecontent;
 }
+
+/*    -> the button will use navigation
 const addBtnEventListener = () => {
     const btn = document.getElementById('addItem')
     btn.addEventListener('click', () => {
         renderForm();
     })
-
-
 }
+*/
 
 const renderTable = () => {
+    //example content
     const tableData = [{
         "id": 1,
         "name": "Ikaro",
@@ -106,7 +106,7 @@ const renderTable = () => {
     /* Render the table, in case of errors render example content */
     dataFetch().then(result => {
         viewContent(usersTable(result))
-        addBtnEventListener()
+        //addBtnEventListener()   -> the button will use navigation
     })
         .catch(error => {
             viewContent(usersTable(tableData))
