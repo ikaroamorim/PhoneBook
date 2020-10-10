@@ -16,7 +16,7 @@ const usersTable = (tableData) => {
             <td>
             <button onclick="navigation('/edita?id=${item.id}')" type="button" class="btn btn-primary"><i class="fas fa-user-edit"></i></button>
             <button onclick="navigation('/deleta?id=${item.id}')" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-            <button onclick="mailto(${item.id})" type="button" class="btn btn-secondary"><i class="fas fa-paper-plane"></i></button>
+            <a href="mailto:${item.email}"><button type="button" class="btn btn-secondary"><i class="fas fa-paper-plane"></i></button> </a>
             <td>
         </tr>
     `
@@ -24,7 +24,7 @@ const usersTable = (tableData) => {
 
 
     const tablecontent = `
-        <h1>Cadastro de Usuários</h1>
+        <h1><i class="fas fa-list"></i> Cadastro de Usuários</h1>
         <table class="table table-hover">
             <thead class="thead-dark">
                 <th scope="col">Nome</th>
