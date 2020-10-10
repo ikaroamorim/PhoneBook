@@ -4,7 +4,7 @@ import {navigation} from './router.js'
 
 const usersAdd = () =>{
     const contentmain = `
-               <h1>Cadastre um novo Contato</h1>
+               <h1><i class="fas fa-user-friends"></i> Cadastre um novo Contato</h1>
                 <form action="" method="post" data-form>
                     <div class="form-group name">
                         <i class="fas fa-user-circle"></i>
